@@ -8,7 +8,6 @@ from pathlib import Path
 # from tkinter import *
 # Explicit imports to satisfy Flake8
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
-import subprocess
 
 
 OUTPUT_PATH = Path(__file__).parent
@@ -18,14 +17,6 @@ ASSETS_PATH = OUTPUT_PATH / Path(r"/Users/User/Desktop/tkdesigner-figma/Apps/bui
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
-def openCalc():
-    subprocess.call(["open", "-a", "Calculator"])
-
-def openTerm():
-    subprocess.call(["open", "-a", "Terminal"])
-
-def openFinder():
-    subprocess.call(["open", "-a", "Finder"])
 
 window = Tk()
 
@@ -50,7 +41,7 @@ button_1 = Button(
     image=button_image_1,
     borderwidth=0,
     highlightthickness=0,
-    command = openCalc,
+    command=lambda: print("button_1 clicked"),
     relief="flat"
 )
 button_1.place(
@@ -66,11 +57,11 @@ button_2 = Button(
     image=button_image_2,
     borderwidth=0,
     highlightthickness=0,
-    command = openTerm,
+    command=lambda: print("button_2 clicked"),
     relief="flat"
 )
 button_2.place(
-    x=219.0,
+    x=226.0,
     y=96.0,
     width=143.0,
     height=75.0
@@ -82,7 +73,7 @@ button_3 = Button(
     image=button_image_3,
     borderwidth=0,
     highlightthickness=0,
-    command = openFinder,
+    command=lambda: print("button_3 clicked"),
     relief="flat"
 )
 button_3.place(
@@ -90,6 +81,22 @@ button_3.place(
     y=96.0,
     width=116.0,
     height=75.0
+)
+
+button_image_4 = PhotoImage(
+    file=relative_to_assets("button_4.png"))
+button_4 = Button(
+    image=button_image_4,
+    borderwidth=0,
+    highlightthickness=0,
+    command=lambda: print("button_4 clicked"),
+    relief="flat"
+)
+button_4.place(
+    x=222.0,
+    y=215.0,
+    width=185.0,
+    height=82.0
 )
 window.resizable(False, False)
 window.mainloop()

@@ -35,5 +35,52 @@ canvas = Canvas(
 )
 
 canvas.place(x = 0, y = 0)
+button_image_1 = PhotoImage(
+    file=relative_to_assets("button_1.png"))
+button_1 = Button(
+    image=button_image_1,
+    borderwidth=0,
+    highlightthickness=0,
+    command=lambda: print("button_1 clicked"),
+    relief="flat"
+)
+button_1.place(
+    x=41.0,
+    y=84.0,
+    width=197.0,
+    height=87.07998657226562
+)
+
+button_image_2 = PhotoImage(
+    file=relative_to_assets("button_2.png"))
+button_2 = Button(
+    image=button_image_2,
+    borderwidth=0,
+    highlightthickness=0,
+    command=lambda: print("button_2 clicked"),
+    relief="flat"
+)
+button_2.place(
+    x=326.0,
+    y=84.0,
+    width=164.0,
+    height=87.0
+)
+
+button_image_3 = PhotoImage(
+    file=relative_to_assets("button_3.png"))
+button_3 = Button(
+    image=button_image_3,
+    borderwidth=0,
+    highlightthickness=0,
+    command=lambda: print("button_3 clicked"),
+    relief="flat"
+)
+button_3.place(
+    x=107.0,
+    y=202.0,
+    width=285.0,
+    height=102.0
+)
 window.resizable(False, False)
 window.mainloop()
