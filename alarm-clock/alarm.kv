@@ -1,0 +1,33 @@
+#:import CircularTimePicker circulardatetimepicker
+#:import Factory kivy.factory.Factory
+
+<TimeSelect@Popup>
+    title: "Select Time"
+    size_hint: 0.8, 0.6
+
+    BoxLayout:
+
+        CircularTimePicker:
+            id: time_picker
+
+        Button:
+            text: "Close"
+            font_size: 16
+            on_release: root.dismiss()
+
+<AppLayout>
+
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        Label:
+            text: "Alarm Clock"
+
+        Button:
+            text: "Select Time"
+            font_size: 16
+            on_release: Factory.TimeSelect().open()
+
+        Label:
+            text: "UNDER CONSTRUCTION"
